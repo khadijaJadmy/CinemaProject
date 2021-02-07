@@ -1,0 +1,73 @@
+
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+<meta charset="utf-8">
+
+<title>Confirmation</title>
+</head>
+<body>
+	
+   <script>alert("cinema bien enregistré"); location='film'; </script>
+  
+		</div>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="home">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="/webjars/popper.js/1.14.3/popper.min.js"></script>
+ 
+</head>
+<body>
+
+	<div layout:fragment="pageContent">
+		<div class="container mt-3">
+			<card class="card">
+				<div class="card-header bg-success text-white">Enregistrement effectué avec succès</div>
+				<div class="card-body">
+					<div class="form-group">
+						<strong><label >ID :</label></strong>
+						<span style="margin-left:30%" th:text="${film.Id}"></span>
+					</div>
+					<div class="form-group">
+						<strong><label>Titre : </label></strong>
+						<span style="margin-left:27%" th:text="${film.titre}"></span>
+					</div>
+					<div class="form-group">
+						<strong><label>Duree : </label></strong>
+						<span style="margin-left:18%" th:text="${film.duree}"></span>
+					</div>
+					<div class="form-group">
+						<strong><label>Realisateur          : </label></strong>
+						<span style="margin-left:25%" th:text="${film.realisateur}"></span>
+					</div>
+					<div class="form-group">
+						<strong><label>Description              : </label></strong>
+						<span style="margin-left:27%" th:text="${film.description}"></span>
+					</div>
+					<div class="form-group">
+						<strong><label>Photo             : </label></strong>
+						<span style="margin-left:27%" th:text="${film.photo}"></span>
+					</div>
+					<div class="form-group">
+						<strong><label>Date de sortie             : </label></strong>
+						<span style="margin-left:27%" th:text="${film.dateSortie}"></span>
+					</div>
+				</div>
+			</card>
+		</div>
+	</div>
+</body>
+</html> -->

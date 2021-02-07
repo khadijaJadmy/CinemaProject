@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html   xmlns:th="http://www.thymeleaf.org" 
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+		layout:decorator="home">
+
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="/webjars/popper.js/1.14.3/popper.min.js"></script>
+ 
+</head>
+<body>
+
+<div layout:fragment="pageContent">
+  <div class="container mt-5">
+	<div class="card">
+		<div class="card-header bg-dark text-white">Liste des categories </div>
+		<div class="card-body">
+			<form method="get" th:action="@{/category}">
+				<div class="form-group">
+					<label>Name</label>
+					<input type="text" name="keyword" th:value="${keyword}">
+					<button class="btn btn-success">chercher</button>
+				</div>
+			</form>
+		
+			<table class="table">
+				<tr>
+					<th>ID</th><th>Nom</th>
+					<th> &nbsp &nbsp &nbsp &nbsp Actions</th>
+				</tr>
+				<tr th:each="f:${listCategories}">
+					<td th:text="${f.id}"></td>
+					<td th:text="${f.name}"></td>
+				
+					<td>
+						<a onclick="return confirm('etes vous sure de vouloire supprimer')" class="btn btn-outline-danger" 
+							th:href="@{deleteCategory(id=${f.id},keyword=${keyword},page=${currentPage},size=${size})}">
+							Delete</a>&nbsp&nbsp&nbsp
+					
+						<a class="btn btn-outline-primary" th:href="@{editCategory(id=${f.id})}">Modifier</a>
+					</td>
+					<td></td>
+					
+				</tr>
+			
+			</table>
+			<label>Clicker ici pour ajouter une categorie </label>
+			<a class="btn btn-outline-primary" th:href="@{/formCategory}" >Ajouter</a>
+			
+		<!-- 	<ul class="nav nav.pills">
+				<li    th:each="page,status:${pages}">
+					<a th:class="${status.index==currentPage?'btn btn-primary':'btn'}" th:href="@{films(page=${status.index},keyword=${keyword},size=${size})}" th:text="${status.index}"></a>
+				
+				</li>
+			</ul> -->
+		</div>
+	  </div>
+   </div>
+</div>
+
+</body>
+</html>

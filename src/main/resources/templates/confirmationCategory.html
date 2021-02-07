@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="home">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="/webjars/popper.js/1.14.3/popper.min.js"></script>
+ 
+</head>
+<body>
+
+	<div layout:fragment="pageContent">
+		<div class="container mt-3">
+			<card class="card">
+				<div class="card-header bg-success text-white">Enregistrement effectué avec succès</div>
+				<div class="card-body">
+					<div class="form-group">
+						<strong><label >ID :</label></strong>
+						<span style="margin-left:30%" th:text="${categorie.Id}"></span>
+					</div>
+					<div class="form-group">
+						<strong><label>Nom : </label></strong>
+						<span style="margin-left:27%" th:text="${categorie.name}"></span>
+					</div>
+					
+				</div>
+			</card>
+		</div>
+	</div>
+</body>
+</html>
